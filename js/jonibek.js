@@ -1,5 +1,5 @@
 // jonibek masalasi
-var elH = document.querySelector("#info");
+var elHeading = document.querySelector("[data-heading]");
 var costFly = 500;
 var costHost = 250;
 var costEntertain = 120;
@@ -11,9 +11,18 @@ var costEntertainSum = euro1 * costEntertain;
 var fullCost = costFlySum + costHostSum + costEntertainSum;
 var jonibek = +prompt("Jonibek qancha puling bor");
 
-if (jonibek >= fullCost) {
-  elH.textContent = "Oq yo’l, Jonibek!";
-} else {
-  elH.textContent = "Jonibek, Shahzoddan so’ra, balki berar! U ham bermasa bollardan so’ra! Ularam bermasa uyda telefonda kino ko’r.";
+// if (jonibek >= fullCost) {
+//   elH.textContent = "Oq yo’l, Jonibek!";
+// } else {
+//   elH.textContent = "Jonibek, Shahzoddan so’ra, balki berar! U ham bermasa bollardan so’ra! Ularam bermasa uyda telefonda kino ko’r.";
+// }
+
+function moneyCount(a , b) {
+  if (a >= b) {
+    return "Oq yo’l, Jonibek!";
+  } else {
+    return "Jonibek, Shahzoddan so’ra, balki berar! U ham bermasa bollardan so’ra! Ularam bermasa uyda telefonda kino ko’r.";
+  }
 }
 
+elHeading.textContent = moneyCount(jonibek , fullCost);
